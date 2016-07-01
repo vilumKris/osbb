@@ -1,5 +1,6 @@
 package dao.impl;
 
+import util.EntityUtil;
 import dao.StaffDAO;
 import model.StaffEntity;
 import org.springframework.data.domain.Page;
@@ -13,7 +14,7 @@ import java.util.List;
  * Created by Aska on 01.07.2016.
  */
 public class StaffDAOImpl implements StaffDAO {
-    //EntityManager em = emf.createEntityManager();
+    private EntityManager em = EntityUtil.getEntityFactoryInstance().createEntityManager();
 
 
     @Override
@@ -103,8 +104,11 @@ public class StaffDAOImpl implements StaffDAO {
 
     @Override
     public <S extends StaffEntity> S save(S s) {
-
+        em.getTransaction().begin();
+        em.persist(s);
+        em.getTransaction().commit();
+        em.close();
         System.out.println("privet from save");
-        return null;
+        return s;
     }
 }

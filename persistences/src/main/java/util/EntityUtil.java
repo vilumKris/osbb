@@ -1,4 +1,4 @@
-package dao;
+package util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,7 +11,7 @@ public class EntityUtil {
     private static EntityManagerFactory emf;
 
     static{
-        emf = Persistence.createEntityManagerFactory("digibank-mysql");
+        emf = Persistence.createEntityManagerFactory("persistenceUnit");
     }
 
     public static EntityManagerFactory getEntityFactoryInstance(){
