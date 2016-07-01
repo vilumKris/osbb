@@ -6,13 +6,10 @@ import model.StaffEntity;
  */
 public class JpaDemo {
     public static void main(String[] args) {
-        //EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistenceUnit");
-        //EntityManager em = emf.createEntityManager();
-        //em.getTransaction().begin();
 
         StaffDAOImpl staffDAO = new StaffDAOImpl();
         StaffEntity staffEntity = new StaffEntity();
-        staffEntity.setIdStaff(10);
+        staffEntity.setIdStaff(12);
         staffDAO.save(staffEntity);
         System.out.println("saved staff id"+ staffEntity.getIdStaff());
 
