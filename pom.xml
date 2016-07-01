@@ -380,6 +380,7 @@
                 </execution>
             </executions>
         </plugin>
+
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
@@ -398,21 +399,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>2.12.4</version>
         </plugin>
-        <!--
-                    <plugin>
-                        <groupId>org.scala-tools</groupId>
-                        <artifactId>maven-scala-plugin</artifactId>
-                        <version>2.15.2</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>compile</goal>
-                                    <goal>testCompile</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-        -->
+
     </plugins>
 </build>
 </project>
