@@ -9,7 +9,7 @@ public class JpaDemo {
 
         StaffDAOImpl staffDAO = new StaffDAOImpl();
         StaffEntity staffEntity = new StaffEntity();
-        staffEntity.setIdStaff(12);
+        staffEntity.setIdStaff(13);
         staffDAO.save(staffEntity);
         System.out.println("saved staff id"+ staffEntity.getIdStaff());
 
