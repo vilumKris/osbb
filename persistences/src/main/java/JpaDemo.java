@@ -1,3 +1,4 @@
+import dao.EntityUtil;
 import dao.impl.StaffDAOImpl;
 import model.StaffEntity;
 
@@ -10,9 +11,12 @@ import javax.persistence.Persistence;
  */
 public class JpaDemo {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistenceUnit");
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
+        //EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistenceUnit");
+        //EntityManager em = emf.createEntityManager();
+        //em.getTransaction().begin();
+
+        EntityUtil.getEntityFactoryInstance();
+
         StaffDAOImpl staffDAO = new StaffDAOImpl();
         StaffEntity staffEntity = new StaffEntity();
         staffEntity.setIdStaff(10);

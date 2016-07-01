@@ -64,7 +64,6 @@ public class EventEntity {
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
         if (author != null ? !author.equals(that.author) : that.author != null) return false;
-
         return true;
     }
 

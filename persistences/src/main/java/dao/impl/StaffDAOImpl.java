@@ -6,13 +6,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-
+import javax.persistence.EntityManager;
 import java.util.List;
 
 /**
  * Created by Aska on 01.07.2016.
  */
 public class StaffDAOImpl implements StaffDAO {
+    //EntityManager em = emf.createEntityManager();
+
+
     @Override
     public List<StaffEntity> findAll() {
         return null;
@@ -100,6 +103,7 @@ public class StaffDAOImpl implements StaffDAO {
 
     @Override
     public <S extends StaffEntity> S save(S s) {
+
         System.out.println("privet from save");
         return null;
     }
