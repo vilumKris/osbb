@@ -1,7 +1,7 @@
 package dao.impl;
 
 
-import dao.HouseEntityDAO;
+import dao.HouseDAO;
 import model.HouseEntity;
 import util.EntityUtil;
 
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by nazar.dovhyy on 02.07.2016.
  */
-public class HouseEntityDAOimpl implements HouseEntityDAO {
+public class HouseDAOimpl implements HouseDAO {
 
     private EntityManagerFactory entityManagerFactory = EntityUtil.getEntityFactoryInstance("postgres-nado");
 

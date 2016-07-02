@@ -1,6 +1,6 @@
 package dao;
 
-import dao.impl.ReportEntityDAOImpl;
+import dao.impl.ReportDAOImpl;
 import model.ReportEntity;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,10 +12,10 @@ import static org.junit.Assert.*;
 /**
  * Created by nazar.dovhyy on 02.07.2016.
  */
-public class ReportEntityDAOTest {
+public class ReportDAOTest {
 
     private static final ReportEntity REPORT_NULL = null;
-    private ReportEntityDAO reportEntityDAO = new ReportEntityDAOImpl();
+    private ReportDAO reportEntityDAO = new ReportDAOImpl();
     private  ReportEntity reportEntity;
 
     @Before

@@ -1,7 +1,7 @@
 package dao;
 
 
-import dao.impl.HouseEntityDAOimpl;
+import dao.impl.HouseDAOimpl;
 import model.HouseEntity;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,10 +11,10 @@ import static org.junit.Assert.*;
 /**
  * Created by nazar.dovhyy on 02.07.2016.
  */
-public class HouseEntityDAOTest {
+public class HouseDAOTest {
 
     private static final HouseEntity NULL_HOUSE = null;
-    private HouseEntityDAO houseEntityDAO = new HouseEntityDAOimpl();
+    private HouseDAO houseEntityDAO = new HouseDAOimpl();
     private static HouseEntity houseEntity;
 
     @Before

@@ -1,7 +1,7 @@
 package dao.impl;
 
 
-import dao.ReportEntityDAO;
+import dao.ReportDAO;
 import model.ReportEntity;
 import util.EntityUtil;
 
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by nazar.dovhyy on 02.07.2016.
  */
-public class ReportEntityDAOImpl implements ReportEntityDAO {
+public class ReportDAOImpl implements ReportDAO {
 
     EntityManagerFactory entityManagerFactory = EntityUtil.getEntityFactoryInstance("postgres-nado");
 
