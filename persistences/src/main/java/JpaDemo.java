@@ -13,7 +13,7 @@ public class JpaDemo {
         staffEntity.setIdStaff(13);
         staffDAO.save(staffEntity);
         System.out.println("saved staff id"+ staffEntity.getIdStaff());*/
-/*
+
         OsbbEntity osbbEntity = new OsbbEntity();
         osbbEntity.setName("osbb_1");
         osbbEntity.setIdCreator((byte)3);
@@ -23,7 +23,7 @@ public class JpaDemo {
         osbbImpl.save(osbbEntity);
 
         EntityUtil.closeEntityManagerFactory();
-*/
+
     }
 
 }
