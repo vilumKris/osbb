@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class HouseEntityDAOimpl implements HouseEntityDAO {
 
-    EntityManagerFactory entityManagerFactory = EntityUtil.getEntityFactoryInstance("postgres-nado");
+    private EntityManagerFactory entityManagerFactory = EntityUtil.getEntityFactoryInstance("postgres-nado");
 
     @Override
     public <S extends HouseEntity> S save(S s) {
