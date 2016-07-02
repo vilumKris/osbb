@@ -1,5 +1,6 @@
 import dao.impl.OsbbDAOImpl;
 import model.OsbbEntity;
+import util.EntityUtil;
 
 /**
  * Created by Aska on 01.07.2016.
@@ -20,6 +21,8 @@ public class JpaDemo {
 
         OsbbDAOImpl osbbImpl = new OsbbDAOImpl();
         osbbImpl.save(osbbEntity);
+
+        EntityUtil.closeEntityManagerFactory();
 
     }
 
