@@ -49,11 +49,6 @@
             <version>${hibernate.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-parent</artifactId>
-            <version>${spring.data.jpa.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
