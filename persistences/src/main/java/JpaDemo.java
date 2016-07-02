@@ -13,6 +13,14 @@ public class JpaDemo {
         staffDAO.save(staffEntity);
         System.out.println("saved staff id"+ staffEntity.getIdStaff());
 
+      /*  OsbbEntity osbbEntity = new OsbbEntity();
+        osbbEntity.setName("osbb_1");
+        osbbEntity.setIdCreator((byte)3);
+        osbbEntity.setDescription("osbb in Lviv");
+
+        OsbbDAOImpl osbbImpl = new OsbbDAOImpl();
+        osbbImpl.save(osbbEntity);*/
+
     }
 
 }
