@@ -28,4 +28,10 @@ public class EntityUtil {
     public static void closeEntityManagerFactory() {
          getEntityFactoryInstance().close();
     }
+
+    public static void closeEntityManager(EntityManager em) {
+        if (em != null && em.isOpen()) {
+            em.close();
+        }
+    }
 }
