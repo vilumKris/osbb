@@ -6,12 +6,14 @@
 
         <class>model.StaffEntity</class>
         <class>model.EventEntity</class>
+        <class>model.OsbbEntity</class>
+        <class>model.VoteEntity</class>
 
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/osbb"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="parolbleat11"/>
+            <property name="hibernate.connection.password" value="301219921768xX92"/>
         </properties>
     </persistence-unit>
 

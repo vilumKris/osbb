@@ -16,7 +16,6 @@ import java.util.List;
 public class StaffDAOImpl implements StaffDAO {
     private EntityManager em = EntityUtil.getEntityFactoryInstance().createEntityManager();
 
-
     @Override
     public List<StaffEntity> findAll() {
         return null;
