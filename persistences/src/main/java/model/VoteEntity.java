@@ -18,7 +18,7 @@ public class VoteEntity {
 
     @Id
     @Column(name = "Vote_id")
-    public int getvoteId() {
+    public int getVoteId() {
         return voteId;
     }
 
