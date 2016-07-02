@@ -26,6 +26,6 @@ public class EntityUtil {
     }
 
     public static void closeEntityManagerFactory() {
-         emf.close();
+         getEntityFactoryInstance().close();
     }
 }
