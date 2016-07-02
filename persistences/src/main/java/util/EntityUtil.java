@@ -21,6 +21,13 @@ public class EntityUtil {
             return emf;
     }
 
+    public static EntityManagerFactory getEntityFactoryInstance(String persistenceUnitVal){
+        if (emf==null) {
+            emf = Persistence.createEntityManagerFactory(persistenceUnitVal);
+        }
+        return emf;
+    }
+
     public static EntityManager getEntityManager(){
         return getEntityFactoryInstance().createEntityManager();
     }

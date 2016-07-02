@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class ReportEntityDAOImpl implements ReportEntityDAO {
 
-    EntityManagerFactory entityManagerFactory = EntityUtil.getEntityFactoryInstance();
+    EntityManagerFactory entityManagerFactory = EntityUtil.getEntityFactoryInstance("postgres-nado");
 
     @Override
     public <S extends ReportEntity> S save(S reportEntity) {
