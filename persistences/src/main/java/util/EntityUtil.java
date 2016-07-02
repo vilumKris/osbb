@@ -20,7 +20,6 @@ public class EntityUtil {
 
     public static EntityManagerFactory getEntityFactoryInstance(String persistenceUnitVal) {
         if (emf == null) {
-            System.out.println("calling out driver");
             emf = Persistence.createEntityManagerFactory(persistenceUnitVal);
         }
         return emf;
