@@ -1,8 +1,7 @@
-package com.example;
+package dao;
 
-import com.example.domain.ReportEntity;
-import com.example.repository.ReportEntityDAO;
-import com.example.repository.ReportEntityDAOImpl;
+import dao.impl.ReportEntityDAOImpl;
+import model.ReportEntity;
 import org.junit.Before;
 import org.junit.Test;
 

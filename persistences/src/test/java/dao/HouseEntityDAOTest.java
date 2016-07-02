@@ -1,8 +1,8 @@
-package com.example;
+package dao;
 
-import com.example.domain.HouseEntity;
-import com.example.repository.HouseEntityDAO;
-import com.example.repository.HouseEntityDAOimpl;
+
+import dao.impl.HouseEntityDAOimpl;
+import model.HouseEntity;
 import org.junit.Before;
 import org.junit.Test;
 
