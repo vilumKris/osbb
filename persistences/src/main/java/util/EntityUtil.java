@@ -10,22 +10,32 @@ import javax.persistence.Persistence;
 public class EntityUtil {
     private static EntityManagerFactory emf;
 
-    static{
-        emf = Persistence.createEntityManagerFactory("persistenceUnit");
-    }
 
-    public static EntityManagerFactory getEntityFactoryInstance(){
-        if (emf==null) {
+    public static EntityManagerFactory getEntityFactoryInstance() {
+        if (emf == null) {
             emf = Persistence.createEntityManagerFactory("persistenceUnit");
         }
-            return emf;
+        return emf;
     }
 
-    public static EntityManager getEntityManager(){
+    public static EntityManagerFactory getEntityFactoryInstance(String persistenceUnitVal) {
+        if (emf == null) {
+            emf = Persistence.createEntityManagerFactory(persistenceUnitVal);
+        }
+        return emf;
+    }
+
+    public static EntityManager getEntityManager() {
         return getEntityFactoryInstance().createEntityManager();
     }
 
     public static void closeEntityManagerFactory() {
-         getEntityFactoryInstance().close();
+        getEntityFactoryInstance().close();
+    }
+
+    public static void closeEntityManager(EntityManager em) {
+        if (em != null && em.isOpen()) {
+            em.close();
+        }
     }
 }

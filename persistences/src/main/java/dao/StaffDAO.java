@@ -1,6 +1,7 @@
 package dao;
 
 import model.StaffEntity;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
