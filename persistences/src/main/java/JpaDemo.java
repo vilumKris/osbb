@@ -1,8 +1,10 @@
+//import dao.impl.EventDAOImpl;
+//import dao.impl.OsbbDAOImpl;
 import dao.impl.EventDAOImpl;
-import dao.impl.OsbbDAOImpl;
 import model.EventEntity;
 import model.OsbbEntity;
 import util.EntityUtil;
+//import util.EntityUtil;
 
 /**
  * Created by Aska on 01.07.2016.
@@ -30,15 +32,15 @@ public class JpaDemo {
         eventEntity.setDescription("The grandmother Zina's cat has dead.");
         EventDAOImpl eventDAO = new EventDAOImpl();
         eventDAO.save(eventEntity);
-//        eventDAO.findOne(1);
+        eventDAO.findOne(1);
 //        eventDAO.findAll();
 //        eventDAO.exists(0);
-        eventDAO.count();
-        eventDAO.delete(1);
-        eventDAO.delete(4);
-        eventDAO.delete(5);
-        eventDAO.delete(14);
-        eventDAO.count();
+//        eventDAO.count();
+//        eventDAO.delete(1);
+//        eventDAO.delete(4);
+//        eventDAO.delete(5);
+//        eventDAO.delete(14);
+//        eventDAO.count();
 
         EntityUtil.closeEntityManagerFactory();
 
