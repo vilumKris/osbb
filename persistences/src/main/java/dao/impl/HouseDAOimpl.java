@@ -104,16 +104,6 @@ public class HouseDAOimpl implements HouseDAO {
         return houseEntity;
     }
 
-    @Override
-    public void deleteAll() {
-
-    }
-
-
-    @Override
-    public HouseEntity findBy(String token) {
-        return null;
-    }
 
     @Override
     public HouseEntity findById(Integer id) {
