@@ -18,6 +18,21 @@ public class EventDAOImpl implements EventDAO {
     private EntityManager em = EntityUtil.getEntityFactoryInstance().createEntityManager();
 
     @Override
+    public EventEntity update(EventEntity eventEntity) {
+        return null;
+    }
+
+    @Override
+    public EventEntity findBy(String token) {
+        return null;
+    }
+
+    @Override
+    public EventEntity findById(Integer id) {
+        return null;
+    }
+
+    @Override
     public <S extends EventEntity> S save(S s) {
         em.getTransaction().begin();
         em.persist(s);
