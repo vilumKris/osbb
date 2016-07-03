@@ -32,7 +32,13 @@ public class JpaDemo {
         eventDAO.save(eventEntity);
 //        eventDAO.findOne(1);
 //        eventDAO.findAll();
-        eventDAO.exists(0);
+//        eventDAO.exists(0);
+        eventDAO.count();
+        eventDAO.delete(1);
+        eventDAO.delete(4);
+        eventDAO.delete(5);
+        eventDAO.delete(14);
+        eventDAO.count();
 
         EntityUtil.closeEntityManagerFactory();
 
