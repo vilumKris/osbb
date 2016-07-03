@@ -28,16 +28,10 @@ public class EventDAOImpl implements EventDAO {
     @Override
     public EventEntity findOne(Integer integer) {
         em.getTransaction().begin();
-        EventEntity result = em.createQuery("from EventEntity E where E.idEvent =" + integer, EventEntity.class).getSingleResult();
-        EventEntity ee = result;
+        EventEntity ee = em.find(EventEntity.class, integer);
         System.out.println("Event №" + ee.getIdEvent() + ": " + ee.getName()
                 + "\nAuthor: " + ee.getAuthor() + "\nDescription: " +ee.getDescription());
-        return result;
-    }
-
-    @Override
-    public boolean exists(Integer integer) {
-        return false;
+        return ee;
     }
 
     @Override
@@ -51,6 +45,21 @@ public class EventDAOImpl implements EventDAO {
         em.getTransaction().commit();
         em.close();
         return result;
+    }
+
+    @Override
+    public boolean exists(Integer integer) {
+        em.getTransaction().begin();
+        EventEntity event = em.find(EventEntity.class, integer);
+        System.out.print("Event №" + event.getIdEvent() + ": " + event.getName());
+        if (event == null) {
+            System.out.println(" doesn`t exists.");
+            return false;
+        }
+        else {
+            System.out.println(" exists.");
+            return true;
+        }
     }
 
     @Override
