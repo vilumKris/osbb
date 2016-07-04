@@ -44,6 +44,7 @@ public class EventDAOImpl implements EventDAO {
     public EventEntity findOne(Integer integer) {
         em.getTransaction().begin();
         EventEntity ee = em.find(EventEntity.class, integer);
+        em.getTransaction().commit();
         System.out.println("Event №" + ee.getIdEvent() + ": " + ee.getName()
                 + "\nAuthor: " + ee.getAuthor() + "\nDescription: " +ee.getDescription());
         return ee;
@@ -66,6 +67,7 @@ public class EventDAOImpl implements EventDAO {
     public boolean exists(Integer integer) {
         em.getTransaction().begin();
         EventEntity event = em.find(EventEntity.class, integer);
+        em.getTransaction().commit();
         System.out.print("Event №" + event.getIdEvent() + ": " + event.getName());
         if (event == null) {
             System.out.println(" doesn`t exists.");
@@ -94,17 +96,31 @@ public class EventDAOImpl implements EventDAO {
 
     @Override
     public long count() {
-        return 0;
+        em.getTransaction().begin();
+        long result = (long) em.createQuery("SELECT count(*) FROM EventEntity").getSingleResult();
+        em.getTransaction().commit();
+        System.out.println("OSBB has " + result + " events.");
+        return result;
     }
 
     @Override
     public void delete(Integer integer) {
-
+//        EventEntity event = em.find(EventEntity.class, integer);
+//        EventEntity event = em.getReference(EventEntity.class, integer);
+        EventEntity event = em.createQuery("select e from EventEntity as e where e.idEvent = :integer",
+                EventEntity.class).setParameter(integer, findById(integer)).getSingleResult();
+        System.out.print("Event №" + event.getIdEvent() + ": " + event.getName() + " removed.");
+        if (event != null) {
+            em.getTransaction().begin();
+            em.remove(event);
+            em.getTransaction().commit();
+        }
     }
 
     @Override
     public void delete(EventEntity eventEntity) {
-
+        em.remove(eventEntity);
+        System.out.print("Event №" + eventEntity.getIdEvent() + ": " + eventEntity.getName() + " removed.");
     }
 
     @Override
@@ -134,7 +150,12 @@ public class EventDAOImpl implements EventDAO {
 
     @Override
     public EventEntity getOne(Integer integer) {
-        return null;
+        em.getTransaction().begin();
+        EventEntity ee = em.find(EventEntity.class, integer);
+        em.getTransaction().commit();
+        System.out.println("Event №" + ee.getIdEvent() + ": " + ee.getName()
+                + "\nAuthor: " + ee.getAuthor() + "\nDescription: " +ee.getDescription());
+        return ee;
     }
 
     @Override

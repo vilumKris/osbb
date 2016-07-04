@@ -16,28 +16,47 @@ public interface GenericDAO<T, K extends Serializable> extends JpaRepository<T, 
 
     boolean DEFAULT_EXISTS_VAL = false;
 
-    T update(T t);
-
-    T findBy(String token);
-
-    T findById(K id);
-
     @Override
     <S extends T> S save(S s);
 
-    @Override
-    void delete(K k);
-
-    @Override
-    void delete(T t);
-
-    @Override
-    void deleteAll();
-
-    @Override
-    List<T> findAll();
-
     /*list of optional methods */
+
+    default T update(T t) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    default void delete(T t) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    default T findOne(K k) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    default List<T> findAll() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    default void delete(K k) {
+        throw new UnsupportedOperationException();
+    }
+    @Override
+    default void deleteAll() {
+        throw new UnsupportedOperationException();
+    }
+
+
+    default T findBy(String token){
+        throw new UnsupportedOperationException();
+    }
+
+    default T findById(K id){
+        throw new UnsupportedOperationException();
+    }
 
     @Override
     default List<T> findAll(Sort sort) {
@@ -85,10 +104,6 @@ public interface GenericDAO<T, K extends Serializable> extends JpaRepository<T, 
     }
 
 
-    @Override
-    default T findOne(K k) {
-        throw new UnsupportedOperationException();
-    }
 
     @Override
     default boolean exists(K k) {
