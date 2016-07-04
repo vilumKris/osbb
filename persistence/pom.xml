@@ -22,9 +22,9 @@
             </plugin>
 
             <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring.data.jpa.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.data.jpa.version}</version>
             </plugin>
         </plugins>
     </build>
@@ -37,10 +37,11 @@
         <mysql.connector.version>5.1.21</mysql.connector.version>
         <postgresql.version>9.1-901.jdbc4</postgresql.version>
         <junit.version>4.11</junit.version>
+        <spring.core.version>4.3.0.RELEASE</spring.core.version>
     </properties>
 
     <dependencies>
-
+        <!--Hibernate-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -53,13 +54,19 @@
             <version>${hibernate.version}</version>
         </dependency>
 
-
+        <!--Spring-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>${spring.data.jpa.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.core.version}</version>
+        </dependency>
 
+        <!--JDBC Drivers-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -71,7 +78,7 @@
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
         </dependency>
-
+        <!--Test's-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
